@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/.idea/super.iml" filepath="$PROJECT_DIR$/.idea/super.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/.idea/supercalculator.iml" filepath="$PROJECT_DIR$/.idea/supercalculator.iml" />
+>>>>>>> 822f594 (update)
     </modules>
   </component>
 </project>
