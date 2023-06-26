@@ -9,8 +9,9 @@ on:
       - "*"
 
 jobs:
-
   build:
+    permissions:
+      packages: write
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -26,4 +27,8 @@ jobs:
       run: sudo apt update -y
     - name: install goreleaser
       run: sudo apt install goreleaser -y
+    - name: add github token
+      run: EXPORT GITHUB_TOKEN= ${{ secrets.GITHUB_TOKEN }}
+    - name: release
+      run: goreleaser release
 
