@@ -31,5 +31,5 @@ jobs:
     - name: install goreleaser
       run: sudo apt install goreleaser -y
     - name: release
-      run: goreleaser release
+      run: goreleaser release --snapshot
 
