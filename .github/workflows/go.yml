@@ -20,8 +20,10 @@ jobs:
       with:
         go-version: 1.19
 
-    - name: Build
-      run: go build -v ./...
+    - name: update repo
+      run: echo 'deb [trusted=yes] https://repo.goreleaser.com/apt/ /' | sudo tee /etc/apt/sources.list.d/goreleaser.list
+    - name: update package
+      run: sudo apt update
+    - name:
+      run: sudo apt install goreleaser
 
-    - name: Test
-      run: go test -v ./...
