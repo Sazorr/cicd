@@ -5,8 +5,10 @@ name: Go
 
 on:
   push:
-    tags:
-      - "*"
+    branches:
+      - ['main']
+#    tags:
+#      - "*"
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
