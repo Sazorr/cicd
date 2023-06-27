@@ -2,15 +2,15 @@ FROM golang:1.19-buster AS build
 
 WORKDIR /app
 
-COPY go.mod ./
-COPY go.sum ./
+ADD go.mod ./
+ADD go.sum ./
 RUN go mod download
 
 ADD . .
 
 RUN go build -o /calculator
 
-FROM gcr.io/distroless/base-debian10
+FROM gcr.io/distroless/base-debian10:latest
 
 WORKDIR /
 
