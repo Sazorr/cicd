@@ -23,12 +23,19 @@ jobs:
       uses: actions/setup-go@v3
       with:
         go-version: 1.19
-    - name: update repo ubuntu
-      run: echo 'deb [trusted=yes] https://repo.goreleaser.com/apt/ /' | sudo tee /etc/apt/sources.list.d/goreleaser.list
-    - name: update package ubuntu
-      run: sudo apt update -y
-    - name: install goreleaser
-      run: sudo apt install goreleaser -y
-    - name: release
-      run: goreleaser release --snapshot
+    - name: Run GoReleaser
+      uses: goreleaser/goreleaser-action@v4
+      with:
+            # either 'goreleaser' (default) or 'goreleaser-pro'
+        distribution: goreleaser
+        version: latest
+        args: release --clean
+#    - name: update repo ubuntu
+#      run: echo 'deb [trusted=yes] https://repo.goreleaser.com/apt/ /' | sudo tee /etc/apt/sources.list.d/goreleaser.list
+#    - name: update package ubuntu
+#      run: sudo apt update -y
+#    - name: install goreleaser
+#      run: sudo apt install goreleaser -y
+#    - name: release
+#      run: goreleaser release --snapshot
 
