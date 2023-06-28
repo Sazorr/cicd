@@ -37,7 +37,7 @@ jobs:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
     - name: check env
-      run: echo ${{ secrets.DOCKERHUB_USERNAME }}/${{ github.event.repository.name }}:${{ github.refs.tags }}
+      run: echo ${{ secrets.DOCKERHUB_USERNAME }}/${{ github.event.repository.name }}:${{ github.ref_name }}
 #    - name: Build and push
 #      uses: docker/build-push-action@v4
 #      with:
