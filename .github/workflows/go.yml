@@ -23,15 +23,13 @@ jobs:
       uses: actions/setup-go@v3
       with:
         go-version: 1.19
-    - name: check secrest
-      run: echo ${{ secrets.GITHUB_TOKEN }}
     - name: Run GoReleaser test
       uses: goreleaser/goreleaser-action@v4
       with:
             # either 'goreleaser' (default) or 'goreleaser-pro'
         distribution: goreleaser
         version: latest
-        args: release --clean --snapshot
+        args: release
 #    - name: update repo ubuntu
 #      run: echo 'deb [trusted=yes] https://repo.goreleaser.com/apt/ /' | sudo tee /etc/apt/sources.list.d/goreleaser.list
 #    - name: update package ubuntu
